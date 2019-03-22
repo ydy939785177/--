@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- 读取数据库配置文件 -->
+    <util:properties id="dbConfig" location="classpath:db.properties"/>
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="url" value="#{dbConfig.url}"/>
+        <property name="driverClassName" value="#{dbConfig.driver}"></property>
+        <property name="username" value="#{dbConfig.username}"/>
+        <property name="password" value="#{dbConfig.password}"/>
+        <property name="initialSize" value="#{dbConfig.initialSize}"/>
+        <property name="maxActive" value="#{dbConfig.maxActive}"/>
+    </bean>
+    <!-- MapperScannerConfigurer：扫描持久层接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="mybatis"/>
+    </bean>
+    <!-- SqlSessionFactoryBean -->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- XML文件在哪里 -->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+    </bean>
+</beans>
