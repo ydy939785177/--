@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
@@ -26,4 +27,24 @@
     </select>
 
 
+=======
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.UserMapper">
+
+	<insert id="insert">
+		INSERT INTO t_user (
+			username, password, 
+			age, phone, 
+			email
+		) VALUES (
+			#{username},#{password},
+			#{age},#{phone},
+			#{email}
+		)
+	</insert>
+	
+>>>>>>> origin/master
 </mapper>

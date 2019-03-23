@@ -12,7 +12,10 @@ public class User {
     private Integer age;
     private String phone;
     private String email;
+<<<<<<< HEAD
     private Integer isDelete;
+=======
+>>>>>>> origin/master
 
     public Integer getId() {
         return id;
@@ -62,6 +65,7 @@ public class User {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public Integer getIsDelete() {
         return isDelete;
     }
@@ -70,6 +74,8 @@ public class User {
         this.isDelete = isDelete;
     }
 
+=======
+>>>>>>> origin/master
     @Override
     public String toString() {
         return "User{" +
@@ -79,7 +85,13 @@ public class User {
                 ", age=" + age +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
+<<<<<<< HEAD
                 ", isDelete=" + isDelete +
                 '}';
     }
+=======
+                '}';
+    }
+
+>>>>>>> origin/master
 }

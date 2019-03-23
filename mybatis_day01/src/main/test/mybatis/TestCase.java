@@ -9,7 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> origin/master
 
 /**
  * @author ydy
@@ -39,18 +42,27 @@ public class TestCase {
         UserMapper userMapper = ac.getBean("userMapper", UserMapper.class);
 
         User user = new User();
+<<<<<<< HEAD
         user.setUsername("root1");
         user.setPassword("root1");
         user.setAge(18);
         user.setPhone("1308544525");
         user.setEmail("root@qq.cn");
         user.setIsDelete(0);
+=======
+        user.setUsername("root");
+        user.setPassword("root");
+        user.setAge(18);
+        user.setPhone("1308544525");
+        user.setEmail("root@qq.cn");
+>>>>>>> origin/master
         Integer rows = userMapper.insert(user);
         System.out.println("rows=" + rows);
 
         ac.close();
     }
 
+<<<<<<< HEAD
     @Test
     public void findAll() {
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("spring.xml");
@@ -62,6 +74,8 @@ public class TestCase {
         }
     }
 
+=======
+>>>>>>> origin/master
 
 }
 
