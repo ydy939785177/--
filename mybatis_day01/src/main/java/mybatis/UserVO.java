@@ -2,9 +2,9 @@ package mybatis;
 
 /**
  * @author ydy
- * @create 2019-03-22 22:31
+ * @create 2019-03-23 17:23
  */
-public class User {
+public class UserVO {
 
     private Integer id;
     private String username;
@@ -13,7 +13,8 @@ public class User {
     private String phone;
     private String email;
     private Integer isDelete;
-
+    private String departmentName;
+    private Integer departmentId;
 
     public Integer getId() {
         return id;
@@ -63,7 +64,6 @@ public class User {
         this.email = email;
     }
 
-
     public Integer getIsDelete() {
         return isDelete;
     }
@@ -72,9 +72,25 @@ public class User {
         this.isDelete = isDelete;
     }
 
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "UserVO{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -82,6 +98,8 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", isDelete=" + isDelete +
+                ", departmentName='" + departmentName + '\'' +
+                ", departmentId=" + departmentId +
                 '}';
     }
 }
