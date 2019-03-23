@@ -6,11 +6,12 @@ package mybatis;
  */
 public class Department {
     /*
-    *部门编号
+    *部门编号啊
     */
     private Integer id ;
+    private int  aaaa;
     /*
-    *部门名
+    *部门名啊
     */
     private String name ;
 
