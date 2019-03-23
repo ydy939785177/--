@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.UserMapper">
+    <!-- Integer insert(User user);-->
+    <insert id="insert">
+		INSERT INTO tedu_ums.t_user (
+			username, password, 
+			age, phone, 
+			email,is_delete
+		) VALUES (
+			#{username},#{password},
+			#{age},#{phone},
+			#{email},#{isDelete}
+		)
+	</insert>
+
+    <!-- List<User> findAll();这里返回的东西都默认是list的集合-->
+    <select id="findAll" resultType="mybatis.User">
+		select
+		username, password,
+		age, phone,
+		email,is_delete isDelete
+		from tedu_ums.t_user
+    </select>
+
+
+</mapper>
