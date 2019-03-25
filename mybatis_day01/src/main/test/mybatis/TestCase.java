@@ -25,11 +25,13 @@ public class TestCase {
     AbstractApplicationContext ac;
     UserMapper userMapper;
     BasicDataSource dataSource;
+    DepartmentMapper departmentMapper;
 
     @Before
     public void init() {
         ac = new ClassPathXmlApplicationContext("spring.xml");
         userMapper = ac.getBean("userMapper", UserMapper.class);
+        departmentMapper = ac.getBean("departmentMapper", DepartmentMapper.class);
     }
 
     @After
@@ -146,6 +148,24 @@ public class TestCase {
             System.out.println("user = " + user);
         }
     }
+
+    @Test
+    public void findAllDepartment() {
+        List<DepartmentVO> list = departmentMapper.findAll();
+        System.out.println("BEGIN:");
+        for (DepartmentVO departmentVO : list) {
+            System.out.println(departmentVO);
+        }
+        System.out.println("END.");
+    }
+
+    @Test
+    public void findDepartmentById() {
+        Integer id = 1;
+        DepartmentVO departmentVO = departmentMapper.findById(id);
+        System.out.println(departmentVO);
+    }
+
 
 }
 

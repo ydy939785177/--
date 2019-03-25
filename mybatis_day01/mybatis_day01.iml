@@ -15,9 +15,10 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring" removed="false">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resource/spring.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resource/db.properties</file>
         </fileset>
       </configuration>
     </facet>
